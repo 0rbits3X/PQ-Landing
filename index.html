@@ -2,19 +2,89 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon"  href="/favicon.png" />
-    <!-- type="image/svg+xml" -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PhotoQuizzer — Turn Notes into Quizzes with AI</title>
-    <meta name="description" content="PhotoQuizzer turns your study notes and photos into interactive quizzes and flashcards instantly with AI. Free download for Android — 5 credits on signup." />
-    <meta property="og:title" content="PhotoQuizzer — Turn Notes into Quizzes with AI" />
-    <meta property="og:description" content="Snap a photo of your notes and get interactive quizzes and flashcards in seconds. Free APK download for Android." />
-    <meta property="og:type" content="website" />
+
+    <!-- <link rel="icon"  href="/favicon.png" /> -->
+    
+    <!-- Primary SEO -->
+    <title>PhotoQuizzer — Turn Notes into Quizzes with AI | Free Android App</title>
+    <meta name="description" content="Snap a photo of your study notes and get an instant AI-generated quiz and flashcards. Free Android app — 5 free credits on signup. Download the APK directly, no Play Store needed." />
+    <meta name="keywords" content="PhotoQuizzer, notes to quiz app, AI quiz generator, study app, flashcard app, exam prep app Android, photo to quiz, APK download" />
+    <link rel="canonical" href="https://photoquizzer.netlify.app/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#7C3AED" />
-    <meta property="og:image" content="https://bolt.new/static/og_default.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
-</head>
+    <meta name="author" content="Orbits3X" />
+
+    <!-- Open Graph (WhatsApp/Facebook/Telegram link previews) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PhotoQuizzer" />
+    <meta property="og:title" content="PhotoQuizzer — Turn Notes into Quizzes with AI" />
+    <meta property="og:description" content="Snap a photo of your notes → AI generates a quiz instantly. Free Android app, 5 free credits on signup." />
+    <meta property="og:url" content="https://photoquizzer.netlify.app/" />
+    <meta property="og:image" content="https://photoquizzer.netlify.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter/X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PhotoQuizzer — Turn Notes into Quizzes with AI" />
+    <meta name="twitter:description" content="Snap a photo of your notes → AI quiz in seconds. Free Android app." />
+    <meta name="twitter:image" content="https://photoquizzer.netlify.app/og-image.png" />
+
+    <!-- GEO: llms.txt pointer + AI-crawl permissions -->
+    <link rel="llms" href="/llms.txt" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Structured data: the app itself (helps Google AND AI engines understand what this is) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PhotoQuizzer",
+      "operatingSystem": "Android",
+      "applicationCategory": "EducationalApplication",
+      "description": "PhotoQuizzer is a free Android app that turns photos of study notes into interactive AI-generated multiple-choice quizzes and flashcards using Google's Gemini AI. Users get 5 free credits on signup and earn more by watching ads or redeeming promo codes.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "downloadUrl": "https://photoquizzer.netlify.app/Photo-Quizzer-v1.1.apk",
+      "fileSize": "80.5MB",
+      "softwareVersion": "1.1",
+      "author": { "@type": "Organization", "name": "Orbits3X" }
+    }
+    </script>
+
+    <!-- Structured data: FAQ (must match on-page FAQ text) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is PhotoQuizzer free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. You get 5 free credits on signup and can earn more credits by watching a short rewarded ad or redeeming a promo code." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why isn't PhotoQuizzer on the Google Play Store?",
+          "acceptedAnswer": { "@type": "Answer", "text": "PhotoQuizzer is currently distributed directly. The APK is signed and safe to install from the official website." }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I need to run PhotoQuizzer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Any Android 7.0 or newer phone with an internet connection for scanning notes. It runs well even on low-RAM phones." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does PhotoQuizzer work?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You take a photo of your handwritten or printed study notes, and Google's Gemini AI reads the notes and generates a 5-question multiple-choice quiz plus 5 flashcards you can study and flip through." }
+        }
+      ]
+    }
+    </script>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
