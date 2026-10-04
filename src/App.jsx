@@ -1,6 +1,6 @@
 // App.jsx
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import HowItWorks from './components/HowItWorks';
@@ -12,8 +12,17 @@ import Footer from './components/Footer';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
 
-// The landing page (your previous App content), as a route component
-function Landing() {
+// Scrolls to top whenever the route changes
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
+// The landing page (your original App content) as a route component
+function Landing({ dark, toggleTheme }) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -35,7 +44,7 @@ function Landing() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300">
-      <Navbar />
+      <Navbar dark={dark} toggleTheme={toggleTheme} />
       <main>
         <Hero />
         <HowItWorks />
@@ -49,7 +58,7 @@ function Landing() {
   );
 }
 
-function App() {
+export default function App() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
@@ -72,8 +81,12 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route
+          path="/"
+          element={<Landing dark={dark} toggleTheme={() => setDark((d) => !d)} />}
+        />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/privacy.html" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
@@ -82,5 +95,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;
