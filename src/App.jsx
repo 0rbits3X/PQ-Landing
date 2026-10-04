@@ -1,5 +1,5 @@
 // App.jsx
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -11,8 +11,9 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
 
-// Scrolls to top whenever the route changes
+// Scrolls to top on route change
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -21,8 +22,8 @@ function ScrollToTop() {
   return null;
 }
 
-// The landing page (your original App content) as a route component
-function Landing({ dark, toggleTheme }) {
+// The landing page
+function Landing() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -44,7 +45,7 @@ function Landing({ dark, toggleTheme }) {
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300">
-      <Navbar dark={dark} toggleTheme={toggleTheme} />
+      <Navbar />
       <main>
         <Hero />
         <HowItWorks />
@@ -58,40 +59,48 @@ function Landing({ dark, toggleTheme }) {
   );
 }
 
-export default function App() {
-  const [dark, setDark] = useState(false);
-
-  useEffect(() => {
-    const stored = localStorage.getItem('theme');
-    if (stored) {
-      setDark(stored === 'dark');
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setDark(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (dark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    localStorage.setItem('theme', dark ? 'dark' : 'light');
-  }, [dark]);
-
+// Legal page layout — same Navbar + Footer as the landing page
+function LegalLayout({ children }) {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route
-          path="/"
-          element={<Landing dark={dark} toggleTheme={() => setDark((d) => !d)} />}
-        />
-        <Route path="/privacy" element={<PrivacyPage />} />
-        <Route path="/privacy.html" element={<PrivacyPage />} />
-        <Route path="/terms" element={<TermsPage />} />
-        <Route path="/terms.html" element={<TermsPage />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300">
+      <Navbar />
+      {children}
+      <Footer />
+    </div>
+  );
+}
+
+function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route
+        path="/privacy"
+        element={
+          <LegalLayout>
+            <PrivacyPage />
+          </LegalLayout>
+        }
+      />
+      <Route
+        path="/terms"
+        element={
+          <LegalLayout>
+            <TermsPage />
+          </LegalLayout>
+        }
+      />
+    </Routes>
+  );
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <AppRoutes />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
