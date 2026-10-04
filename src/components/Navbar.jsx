@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
+import { useTheme } from '../context/ThemeContext';
 
-export default function Navbar({ dark, toggleTheme }) {
+export default function Navbar() {
+  const { dark, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
