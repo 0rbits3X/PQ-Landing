@@ -13,7 +13,7 @@ export default function Features() {
     {
       icon: '🎨',
       title: 'Light & Dark Mode',
-      desc: 'A beautiful dual-theme interface that\u2019s easy on the eyes, day or night.',
+      desc: 'A beautiful dual-theme interface that’s easy on the eyes, day or night.',
     },
     {
       icon: '🔒',
@@ -26,7 +26,7 @@ export default function Features() {
     <section id="features" className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-          Features you\u2019ll love
+          Features you’ll love
         </h2>
         <p className="mt-3 text-center text-slate-600 dark:text-slate-400 max-w-lg mx-auto">
           Everything you need to turn study material into effective learning.
