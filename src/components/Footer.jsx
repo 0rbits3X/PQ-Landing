@@ -13,7 +13,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-6 text-sm">
-            <a href="#" className="hover:text-brand-400 transition-colors">
+            <a href="/privacy.html" className="hover:text-brand-400 transition-colors">
               Privacy Policy
             </a>
             <a
