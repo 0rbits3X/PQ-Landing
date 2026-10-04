@@ -1,3 +1,4 @@
+// src/components/Footer.jsx
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -16,8 +17,11 @@ export default function Footer() {
             <a href="/privacy" className="hover:text-brand-400 transition-colors">
               Privacy Policy
             </a>
+            <a href="/terms" className="hover:text-brand-400 transition-colors">
+              Terms & Conditions
+            </a>
             <a
-              href="mailto:support@example.com"
+              href="mailto:orbits3x@gmail.com?subject=PhotoQuizzer%20Support"
               className="hover:text-brand-400 transition-colors"
             >
               Contact support
