@@ -13,4 +13,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://photoquizzer.netlify.app/sitemap.xml
+Sitemap: https://photoquizzer-app.pages.dev/sitemap.xml
