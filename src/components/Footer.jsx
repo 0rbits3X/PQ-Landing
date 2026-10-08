@@ -21,7 +21,7 @@ export default function Footer() {
               Terms & Conditions
             </a>
             <a
-              href="mailto:orbits3x@gmail.com?subject=PhotoQuizzer%20Support"
+              href="mailto:photoquizzersupport@gmail.com?subject=PhotoQuizzer%20Support"
               className="hover:text-brand-400 transition-colors"
             >
               Contact support

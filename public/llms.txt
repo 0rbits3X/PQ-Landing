@@ -10,4 +10,4 @@ PhotoQuizzer lets students snap a photo of handwritten or printed study notes an
 - Privacy: user accounts secured with email authentication and row-level security; note photos are processed by the Gemini API to generate quizzes
 - Developer: Orbits3X
 - Official site and download: https://photoquizzer.netlify.app
-- Direct APK: https://photoquizzer.netlify.app/Photo-Quizzer-v1.1.apk
+- Direct APK: https://github.com/0rbits3X/PhotoQuizzer-Release/releases/latest/download/PhotoQuizzer.apk

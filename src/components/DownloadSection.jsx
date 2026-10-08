@@ -38,7 +38,7 @@ export default function DownloadSection() {
                 PhotoQuizzer.apk
               </p>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                v1.0.0 • ~{APK_SIZE_MB} MB • ✅ Virus-free, directly distributed
+                v2.1.1 • ~{APK_SIZE_MB} MB • ✅ Virus-free, directly distributed
               </p>
             </div>
           </div>

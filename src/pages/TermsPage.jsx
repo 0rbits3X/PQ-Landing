@@ -79,7 +79,7 @@ export default function TermsPage() {
       <h2 className="text-2xl font-bold mt-10 mb-4 border-b-2 border-purple-100 dark:border-purple-950 pb-2">11. Contact</h2>
       <p className="mb-4">
         Questions about these Terms? Email{" "}
-        <a href="mailto:orbits3x@gmail.com" className="text-purple-600 dark:text-purple-400">orbits3x@gmail.com</a>.
+        <a href="mailto:photoquizzersupport@gmail.com" className="text-purple-600 dark:text-purple-400">photoquizzersupport@gmail.com</a>.
       </p>
     </div>
   );
