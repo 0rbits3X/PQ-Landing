@@ -11,6 +11,7 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
+import Verified from './pages/Verified';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 
 // Scrolls to top on route change
@@ -90,6 +91,7 @@ function AppRoutes() {
           </LegalLayout>
         }
       />
+      <Route path="/verified" element={<Verified />} />
     </Routes>
   );
 }
